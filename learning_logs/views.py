@@ -39,6 +39,7 @@ def new_topic(request):
         # POST提交的数据，对数据进行处理
         form = TopicForm(request.POST)
         if form.is_valid():
+            form.instance.owner=request.user
             form.save()
             return HttpResponseRedirect(reverse('learning_logs:topics'))
 
