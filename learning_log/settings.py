@@ -59,7 +59,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'learning_log/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,7 +141,7 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     
     # Only allow heroku to host the project.
-    ALLOWED_HOSTS = ['fierce-beyond-94586.herokuapp.com']
+    ALLOWED_HOSTS = ['ouyang-learning-log.com']
     DEBUG = False
 
     # Static asset configuration
